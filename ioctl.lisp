@@ -33,13 +33,13 @@
 (defun (setf ioctl) (value fd cmd)
   (if (cffi:pointerp value)
       (let ((ret (%ioctl (stream-fd fd) cmd value)))
-	(if (<= 0 ret)
-	    value
-	    (error "IOCTL ~a failed: ~a" cmd (strerror *errno*))))
+        (if (<= 0 ret)
+            value
+            (error "IOCTL ~a failed: ~a" cmd (strerror *errno*))))
       (cffi:with-foreign-object (arg :int)
-	(setf (cffi:mem-ref arg :int) value)
-	(let ((ret (%ioctl (stream-fd fd) cmd arg)))
-	  (if (<= 0 ret)
-	      value
-	      (error "IOCTL ~a failed: ~a" cmd (strerror *errno*)))))))
+        (setf (cffi:mem-ref arg :int) value)
+        (let ((ret (%ioctl (stream-fd fd) cmd arg)))
+          (if (<= 0 ret)
+              value
+              (error "IOCTL ~a failed: ~a" cmd (strerror *errno*)))))))
 
