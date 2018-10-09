@@ -84,3 +84,12 @@
      (or speed (handle-max-speed handle))
      (* 1000000 (or delay 0))
      (or bits/word (handle-bits/word handle)))))
+
+(defun read-chunked (handle chunk-size count &key speed delay bits/word
+                                               delay-usec)
+  (cl-spidev-lli:read-chunked
+   (handle-stream handle)
+   chunk-size count
+   (or speed (handle-max-speed handle))
+   (or delay-usec (* 1000000 (or delay 0)))
+   (or bits/word (handle-bits/word handle))))

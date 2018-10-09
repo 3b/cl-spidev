@@ -48,7 +48,9 @@
    #:max-speed
    #:write-bytes
    #:read-bytes
-   #:transmit))
+   #:transmit)
+  (:export
+   #:read-chunked))
 
 (defpackage #:cl-spidev
   (:nicknames #:org.shirakumo.spidev #:spidev)
@@ -69,4 +71,6 @@
    #:read*
    #:write
    #:write*
-   #:transmit))
+   #:transmit)
+  (:export
+   #:read-chunked))

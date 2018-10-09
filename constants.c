@@ -33,5 +33,8 @@ int main(){
   printf("(defconstant %-24s #x%X)\n", "SPI_IOC_WR_MAX_SPEED_HZ", SPI_IOC_WR_MAX_SPEED_HZ);
   printf("(defconstant %-24s #x%X)\n", "SPI_IOC_RD_MODE32", SPI_IOC_RD_MODE32);
   printf("(defconstant %-24s #x%X)\n", "SPI_IOC_WR_MODE32", SPI_IOC_WR_MODE32);
+  printf("(defconstant %-24s #x%X)\n", "IOC-SIZEBITS",_IOC_SIZEBITS);
+  printf("(defconstant %-24s #x%X)\n", "IOC-SIZESHIFT",_IOC_SIZESHIFT);
+  printf("(defconstant %-24s #x%X)\n", "SPI-IOC-TRANSFER-SIZE",sizeof (struct spi_ioc_transfer));
   return 0;
 }

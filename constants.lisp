@@ -46,3 +46,6 @@ Author: Nicolas Hafner <shinmera@tymoon.eu>
 (defconstant SPI-IOC-WR-MAX-SPEED-HZ  #x40046B04)
 (defconstant SPI-IOC-RD-MODE32        #x80046B05)
 (defconstant SPI-IOC-WR-MODE32        #x40046B05)
+(defconstant IOC-SIZEBITS             #xE)
+(defconstant IOC-SIZESHIFT            #x10)
+(defconstant SPI-IOC-TRANSFER-SIZE    #x20)
